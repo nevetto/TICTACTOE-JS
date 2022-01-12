@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="TICTACTOE.CSS">
+</head>
+<body>
+    <div class="col-sm-12">
+        <div class="mydiv" style="padding: 15px 0px 25px 10px">
+            <div  style="color: red; font-size: xx-large; font-weight: bolder; text-align: center; padding: 0%;">
+                TIC <span style="color: blue;">TAC</span> <span style="color: purple;">TOE</span> 
+            </div>
+    
+            <div style="font-weight: bolder;">
+                Player 1: <input type="text" id="ply1"  style="width: 450px; color: blue; font-weight: bold;" placeholder="Please Enter Your Name">
+                <button onclick=" player1()" style="margin-right: 60px;">ENTER</button>
+                vs
+                <span style="margin-left: 40px;"> Player 2: </span><input type="text" id="ply2" style="width: 450px; color: red; font-weight: bold;" placeholder="Please Enter Your Name">
+                <button onclick=" player2()">ENTER</button>
+            </div>
+            <div style=" padding: 0px 0px 0px 500px;">
+                
+            <!-- <button style="margin: 5px 0px 5px 120px; font-weight: bold;">Start Game</button> -->
+
+           
+           <div id="non">
+            <input type="text" id="playerval1" placeholder="enter value for player 1">
+            <input type="text" id="playerval2" placeholder="enter value for player 2">
+           </div> 
+               
+               
+            <div col-sm-12>
+                <div class="row">
+                    <div class="div1" style="border: 3px  solid black;"  id="one" onclick="plyval(event)"></div>
+                    <div class="div1" style="border: 3px solid black;"  id="two" onclick="plyval(event)"></div>
+                    <div class="div1" style="border: 3px solid black;" id="three" onclick="plyval(event)"></div>
+                </div>
+    
+                <div class="row">
+                    <div class="div1" style="border: 3px  solid black; " id="four" onclick="plyval(event)"></div>
+                    <div class="div1" style="border: 3px  solid black; " id="five" onclick="plyval(event)"></div>
+                    <div class="div1" style="border: 3px solid black;" id="six" onclick="plyval(event)"></div>
+                </div>
+    
+                <div class="row">
+                    <div class="div1" style="border: 3px  solid black; " id="seven" onclick="plyval(event)"></div>
+                    <div class="div1" style="border: 3px  solid black;" id="eight" onclick="plyval(event)"></div>
+                    <div class="div1" style="border: 3px solid black;" id="nine" onclick="plyval(event)"></div>
+                </div>
+            </div>
+                    
+               
+            </div>
+    
+            <div  class="row">
+                <audio id="audio1" controls onload="playPause()" style="margin-left: 15px;">
+                    <audio autoplay="autoplay"></audio>
+                <source src="audio/ticaudio.wav" type="">
+                </audio>
+                <button onclick="rSet()" style="width: 65px; height: 65px; border-radius: 50px;">RESET</button>
+                <input type="text" id="playerOne" value="0">
+                <input type="text" id="playerTwo" value="0">
+             <a href="TICTACTOE.HTML"> <button style="margin-left: 310px; margin-top: 15px; font-weight: bolder;">RESTART GAME</button></a>
+             
+            </div>
+        </div> 
+    </div>
+    
+    
+    <script> 
+        var myVideo = document.getElementById("audio1"); 
+        
+        function playPause() { 
+            myAudio.loop = true
+            myAudio.load(); 
+        }
+
+    var a, b, c;
+    var a = ply1.value;
+    a = ply1.value; 
+    b = '....'
+    c = 'welcome on board, you are taking x';
+   
+    // var b = 'ADE';
+    function player1(){
+    document.getElementById('ply1').value+= a  + b + c;
+}
+
+var x, y, z;
+    var x = ply2.value;
+    x = ply2.value; 
+    y = '....'
+    z = 'welcome on board, you are taking O';
+   
+    // var b = 'ADE';
+    function player2(){
+    document.getElementById('ply2').value+= x  + y + z;
+}
+
+
+
+
+let p = 'O';
+let One = 0; 
+function plyval(event) {
+    if (one.innerHTML == playerval1.value && two.innerHTML == playerval1.value && three.innerHTML == playerval1.value){
+            ++One;
+            playerOne.value = One;
+        } else if (four.innerHTML == playerval1.value && five.innerHTML == playerval1.value && six.innerHTML == playerval1.value){
+            ++One;
+            playerOne.value = One;
+        } else if (seven.innerHTML == playerval1.value && eight.innerHTML == playerval1.value && nine.innerHTML == playerval1.value){
+            ++One;
+            playerOne.value = One;
+        } else if (one.innerHTML == playerval1.value && four.innerHTML == playerval1.value && seven.innerHTML == playerval1.value){
+            ++One;
+            playerOne.value = One;
+
+        } else if (two.innerHTML == playerval1.value && five.innerHTML == playerval1.value && eight.innerHTML == playerval1.value){
+            ++One;
+            playerOne.value = One;
+
+        } else if (three.innerHTML == playerval1.value && six.innerHTML == playerval1.value && nine.innerHTML == playerval1.value){
+            ++One;
+            playerOne.value = One;
+
+        } else if (one.innerHTML == playerval1.value && five.innerHTML == playerval1.value && nine.innerHTML == playerval1.value){
+            ++One;
+            playerOne.value = One;
+
+        } else if (three.innerHTML == playerval1.value && five.innerHTML == playerval1.value && seven.innerHTML == playerval1.value){
+            ++One;
+            playerOne.value = One;
+
+        } else if (one.innerHTML == playerval2.value && two.innerHTML == playerval2.value && three.innerHTML == playerval2.value){
+            ++One;
+            playerOne.value = One;
+        } else if (four.innerHTML == playerval2.value && five.innerHTML == playerval2.value && six.innerHTML == playerval2.value){
+            ++One;
+            playerTwo.value = One;
+        } else if (seven.innerHTML == playerval2.value && eight.innerHTML == playerval2.value && nine.innerHTML == playerval2.value){
+            ++One;
+            playerTwo.value = One;
+        } else if (one.innerHTML == playerval2.value && four.innerHTML == playerval2.value && seven.innerHTML == playerval2.value){
+            ++One;
+            playerTwo.value = One;
+
+        } else if (two.innerHTML == playerval2.value && five.innerHTML == playerval2.value && eight.innerHTML == playerval2.value){
+            ++One;
+            playerTwo.value = One;
+
+        } else if (three.innerHTML == playerval2.value && six.innerHTML == playerval2.value && nine.innerHTML == playerval2.value){
+            ++One;
+            playerTwo.value = One;
+
+        } else if (one.innerHTML == playerval2.value && five.innerHTML == playerval2.value && nine.innerHTML == playerval2.value){
+            ++One;
+            playerTwo.value = One;
+
+        } else if (three.innerHTML == playerval2.value && five.innerHTML == playerval2.value && seven.innerHTML == playerval2.value){
+            ++One;
+            playerTwo.value = One;
+
+
+        }else if (p == 'O' && playerval1.value != '' && playerval2.value != ''){
+        event.target.innerHTML = playerval1.value;
+        p = 'X';
+
+        }else if(p == 'X' && playerval1.value != '' && playerval2.value != ''){
+        event.target.innerHTML = playerval2.value;
+        p = 'O';
+        }
+
+}
+
+
+const rSet = () => {
+    one.innerHTML = '';
+    two.innerHTML = '';
+    three.innerHTML = '';
+    four.innerHTML = '';
+    five.innerHTML = '';
+    six.innerHTML = '';
+    seven.innerHTML = '';
+    eight.innerHTML = '';
+    nine.innerHTML = '';
+}
+
+//replace
+// function myFunction() {
+//     var str = document.getElementById("demo").innerHTML; 
+//     var txt = str.replace("Microsoft","W3Schools");
+//     document.getElementById("demo").innerHTML = txt;
+// }
+
+    </script> 
+</body>
+</html>
